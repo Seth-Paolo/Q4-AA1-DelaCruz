@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">  
+		<title> mRNA Sequence </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+	<body>
+	
+		<script>
+		//declarations
+			var mRNA = prompt("Enter a mRNA sequence");
+			var length = mRNA.length;
+			var start = mRNA.indexOf("AUG");
+			var codon = [];
+			var x = 0;
+        
+        //values in an array
+			for(var h = start; h < length; h+=3){
+				codon[x] = mRNA.slice(h, h+3);
+				x++;
+			}
+
+        //sequences present
+			document.write("[");
+
+			for(var j = 0; j < codon.length; j++){
+				if(codons[j] == "UAA" || codons[j] == "UAG" || codons[j] == "UGA") {
+					document.write(codons[j]);
+					break;
+				}
+
+				else {
+				document.write(codons[j]);
+				}
+				
+				if(i < codons.length - 1) {
+					document.write(", ")
+				}
+			}
+
+            document.write("]");
+
+        //Output type of sequence    
+            for(var i = 0; i < codons.length; i++) {
+			
+            document.write(codons[i], " --> ");
+            
+            if (codons[i] == "UUU" || codons[i] == "UUC") {
+                document.write("Phe");
+            }
+
+            else if (codons[i] == "UUA" || codons[i] == "UUG" || codons[i] == "CUU" || codons[i] == "CUC" || codons[i] == "CUA" || codons[i] == "CUG") {
+                document.write("Leu");
+            } 
+            
+            else if (codons[i] == "AUU" || codons[i] == "AUC" || codons[i] == "AUA") {
+                document.write("Ile");
+            }
+            
+            else if (codons[i] == "AUG"){
+                document.write("Met");
+            }
+            
+            else if (codons[i] == "UCU" || codons[i] == "UCC" || codons[i] == "UCA" || codons[i] == "UCG" || codons[i] == "AGU" || codons[i] == "AGC") {
+                document.write("Ser");
+            }				
+            
+            else if (codons[i] == "CCU" || codons[i] == "CCC" || codons[i] == "CCA" || codons[i] == "CCG") {
+                document.write("Pro");
+            }
+            
+            else if (codons[i] == "ACU" || codons[i] == "ACC" || codons[i] == "ACA" || codons[i] == "ACG") {
+                document.write("Thr");
+            }
+            
+            else if (codons[i] == "GCU" || codons[i] == "GCC" || codons[i] == "GCA" || codons[i] == "GCG") {
+                document.write("Ala");
+            }
+
+            else if (codons[i] == "UAU" || codons[i] == "UAC") {
+                document.write("Tyr");
+            }
+
+            else if (codons[i] == "UAA" || codons[i] == "UAG" || codons[i] == "UGA") {
+                document.write("STOP");
+                break;
+            }
+
+            else if (codons[i] == "CAU" || codons[i] == "CAC") {
+                document.write("His");
+            }
+
+            else if (codons[i] == "CAA" || codons[i] == "CAG") {
+                document.write("Gin");
+            }
+            
+            else if (codons[i] == "AAU" || codons[i] == "AAC") {
+                document.write("Asn");
+            }
+
+            else if (codons[i] == "AAA" || codons[i] == "AAG") {
+                document.write("Lys");
+            }
+            
+            else if (codons[i] == "GAU" || codons[i] == "GAC") {
+                document.write("Asp");
+            }
+            
+            else if (codons[i] == "GAA" || codons[i] == "GAG") {
+                document.write("Glu");
+            }
+            
+            else if (codons[i] == "UGU" || codons[i] == "UGC") {
+                document.write("Cys");
+            }
+            
+            else if (codons[i] == "UGG") {
+                document.write("Trp");
+            }
+            
+            else if (codons[i] == "CGU" || codons[i] == "CGC" || codons[i] == "CGA" || codons[i] == "CGG" || codons[i] == "AGA" || codons[i] == "AGG") {
+                document.write("Arg");
+            }
+            
+            else if (codons[i] == "GGU" || codons[i] == "GGC" || codons[i] == "GGA" || codons[i] == "GGG") {
+                document.write("Gly");
+            }
+            
+            document.write("<br>");
+            
+            var a = i;
+        }
+        
+    //Checks if there is no stop
+        if (a + 1 == codons.length){
+            alert("No Stop Codon Was Found!");
+        }
+		
+		</script>
+	
+	
+	</body>
+
+</html>
